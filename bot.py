@@ -1,3 +1,4 @@
+import time
 import streamlit as st
 from utils import write_message
 from llm import llm, embeddings
@@ -5,48 +6,24 @@ from llm import llm, embeddings
 from agent import generate_response
 from predict_page import show_predict_page
 from explore_page import show_explore_page
-
+from chatQuery import start_chat
 # tag::setup[]
-# Page Config
-st.set_page_config("Ebert", page_icon=":movie_camera:")
-# end::setup[]
 
+# Page Config
+#st.set_page_config("Ebert", page_icon=":movie_camera:")
+ # end::setup[]
+# Set up Session State
+page = "Explore"
 page = st.sidebar.selectbox("Explore, Predict or Query", ("Predict", "Explore", "Query"))
 
 if page == "Predict":
     show_predict_page()
 if page == "Explore":
     show_explore_page()
-else:
-    # tag::session[]
-    # Set up Session State
-    if "messages" not in st.session_state:
-        st.session_state.messages = [
-            {"role": "assistant", "content": "Hi, I'm the GraphAcademy Chatbot!  How can I help you?"},
-        ]
-    # end::session[]
-
-    # tag::submit[]
-    # Submit handler
-    def handle_submit(message):
-        # Handle the response
-        with st.spinner('Thinking...'):
-
-            response = generate_response(message)
-            write_message('assistant', response)
-    # end::submit[]
-
-
-    # tag::chat[]
-    # Display messages in Session State
-    for message in st.session_state.messages:
-        write_message(message['role'], message['content'], save=False)
-
-    # Handle any user input
-    if prompt := st.chat_input("What is up?"):
-        # Display user message in chat message container
-        write_message('user', prompt)
-
-        # Generate a response
-        handle_submit(prompt)
-    # end::chat[]
+if page == "Query":
+    start_chat()
+#else :
+    #st.empty()
+    #st.balloons()
+    #st.progress(10)
+    #with st.spinner('Wait for it...'):    time.sleep(3)
