@@ -4,20 +4,9 @@ from llm import llm
 from langchain.tools import Tool    
 from langchain.prompts import PromptTemplate
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
-from tools.vector import kg_qa
-from tools.cypher import cypher_qa
-
-# Include the LLM from a previous lesson
-from llm import llm
-# tag::tools[]
-tools = [
-    Tool.from_function(
-        name="General Chat",
-        description="For general chat not covered by other tools",
-        func=llm.invoke,
-        return_direct=False
-    )
-    #,
+#from tools.vector import kg_qa
+#from tools.cypher import cypher_qa
+ #,
     #Tool.from_function(
     #    name="Cypher QA",
     #    description="Provide information about movies questions using Cypher",
@@ -30,9 +19,19 @@ tools = [
     #    func = kg_qa,
     #    return_direct=False
     #)
+# Include the LLM from a previous lesson
+from llm import llm
+# tag::tools[]
+tools = [
+    Tool.from_function(
+        name="General Chat",
+        description="For general chat not covered by other tools",
+        func=llm.invoke,
+        return_direct=False
+    )
 ]
 # end::tools[]
-
+  
 
 memory = ConversationBufferWindowMemory(
     memory_key='chat_history',

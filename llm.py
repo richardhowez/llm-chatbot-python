@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from graph import graph
+# from graph import graph
 
 llm = ChatOpenAI(
     openai_api_key=st.secrets["OPENAI_API_KEY"],
