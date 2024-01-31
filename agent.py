@@ -16,19 +16,20 @@ tools = [
         description="For general chat not covered by other tools",
         func=llm.invoke,
         return_direct=False
-    ),
-    Tool.from_function(
-        name="Cypher QA",
-        description="Provide information about movies questions using Cypher",
-        func = cypher_qa,
-        return_direct=False
-    ),
-    Tool.from_function(
-        name="Vector Search Index",
-        description="Provides information about movie plots using Vector Search",
-        func = kg_qa,
-        return_direct=False
     )
+    #,
+    #Tool.from_function(
+    #    name="Cypher QA",
+    #    description="Provide information about movies questions using Cypher",
+     #   func = cypher_qa,
+    #    return_direct=False
+    #),
+    #Tool.from_function(
+     #   name="Vector Search Index",
+    #    description="Provides information about movie plots using Vector Search",
+    #    func = kg_qa,
+    #    return_direct=False
+    #)
 ]
 # end::tools[]
 
