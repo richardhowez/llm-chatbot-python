@@ -25,8 +25,7 @@ page = "Explore"
 page = st.sidebar.selectbox("Explore, Predict or Query", ("Predict", "Explore", "Query"))
 
 if page == "Predict":
-    #show_predict_page()
-    show_explore_page()
+    show_predict_page()
 if page == "Explore":
     show_explore_page()
 if page == "Query":
