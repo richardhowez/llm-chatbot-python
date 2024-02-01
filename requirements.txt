@@ -4,3 +4,4 @@ langchain_openai
 neo4j-driver
 streamlit
 scikit-learn
+matplotlib
