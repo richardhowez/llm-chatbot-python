@@ -5,3 +5,7 @@ neo4j-driver
 streamlit
 scikit-learn
 matplotlib
+numpy
+pandas
+plotly
+pickle
