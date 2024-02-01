@@ -3,7 +3,7 @@ openai
 langchain_openai
 neo4j-driver
 streamlit
-scikit-learn
+scikit-learn == 1.2.1
 matplotlib
 numpy
 pandas
