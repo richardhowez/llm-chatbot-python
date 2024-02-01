@@ -17,3 +17,10 @@ Then run the `streamlit run` command to start the app on link:http://localhost:8
 
 [source,sh]
 streamlit run bot.py
+
+
+For Chat some questions that test the functionality are;
+
+1. General Chat - Open AI query only
+2. Cypher QA Chain - generates a Cypher query based on natural language, and augments the Open AI Query with the results. 
+    - common question to test; How to find how many degrees of separation there are between two people
